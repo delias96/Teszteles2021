@@ -3,6 +3,7 @@ package hu.uni.miskolc.teszteles.core;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import hu.uni.miskolc.teszteles.core.enums.Kivitel;
 import hu.uni.miskolc.teszteles.core.enums.Uzemanyag;
@@ -167,5 +168,30 @@ public class Auto implements HanggalRendelkezo {
 	public Auto() {
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(ajtokSzama, forgalmiSzama, gyartasiIdo, gyarto, hengerurtartalom, kivitel, korozott, modell,
+				rendszam, szinHex, uzemanyag, valto);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Auto other = (Auto) obj;
+		return ajtokSzama == other.ajtokSzama && Objects.equals(forgalmiSzama, other.forgalmiSzama)
+				&& Objects.equals(gyartasiIdo, other.gyartasiIdo) && Objects.equals(gyarto, other.gyarto)
+				&& Objects.equals(hengerurtartalom, other.hengerurtartalom) && kivitel == other.kivitel
+				&& korozott == other.korozott && Objects.equals(modell, other.modell)
+				&& Objects.equals(rendszam, other.rendszam) && Objects.equals(szinHex, other.szinHex)
+				&& uzemanyag == other.uzemanyag && valto == other.valto;
+	}
+	
+	
 
 }

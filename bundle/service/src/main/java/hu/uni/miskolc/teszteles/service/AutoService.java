@@ -9,6 +9,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.Predicate;
 
 import hu.uni.miskolc.teszteles.core.Auto;
+import hu.uni.miskolc.teszteles.core.exceptions.RendszamNemMegfelelo;
 import hu.uni.miskolc.teszteles.dao.AutoDao;
 import hu.uni.miskolc.teszteles.service.exception.AutoNemTalalhato;
 import hu.uni.miskolc.teszteles.service.exception.RendszamMarFoglalt;
@@ -29,7 +30,7 @@ public class AutoService {
 		return dao.readAllAutos();
 	};
 	
-	public Auto getAutoByRendszam(String rendszam) throws AutoNemTalalhato {
+	public Auto getAutoByRendszam(String rendszam) throws AutoNemTalalhato, RendszamNemMegfelelo {
 		return dao.readAutoById(rendszam);
 	}
 	
