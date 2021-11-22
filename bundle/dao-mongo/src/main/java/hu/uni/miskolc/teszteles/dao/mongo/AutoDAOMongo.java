@@ -80,5 +80,9 @@ public class AutoDAOMongo implements AutoDao {
 		// TODO Auto-generated method stub
 
 	}
+	
+	public void deleteAll() {
+		collection.drop();
+	}
 
 }

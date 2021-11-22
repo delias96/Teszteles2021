@@ -14,6 +14,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		  <argLine>--add-modules java.base --add-opens java.base/jdk.internal.util=ALL-UNNAMED --illegal-access=permit
+        </argLine>
 	</properties>
 
 	<dependencies>
@@ -28,6 +30,7 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.12.5</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -81,5 +84,6 @@
     <module>core</module>
     <module>service</module>
     <module>dao-mongo</module>
+    <module>failsafe</module>
   </modules>
 </project>
